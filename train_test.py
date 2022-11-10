@@ -11,6 +11,8 @@ from utils import one_hot_tensor, cal_sample_weight, gen_adj_mat_tensor, gen_tes
 
 cuda = True if torch.cuda.is_available() else False
 
+def new_train_strategy(*args, **kwargs):
+    pass
 
 def prepare_trte_data(data_folder, view_list):
     num_view = len(view_list)
