@@ -33,6 +33,13 @@ class GraphConvolution(nn.Module):
             return output + self.bias
         else:
             return output
+
+class NewModel(nn.Module):
+    def __init__(self, *args, **kwargs):
+        pass
+
+    def forward(self, *args, **kwargs):
+        pass
     
 
 class GCN_E(nn.Module):
