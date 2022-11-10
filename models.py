@@ -20,7 +20,9 @@ class GraphConvolution(nn.Module):
         self.weight = nn.Parameter(torch.FloatTensor(in_features, out_features))
         if bias:
             self.bias = nn.Parameter(torch.FloatTensor(out_features))
-        nn.init.xavier_normal_(self.weight.data)
+        # charelchen.cj 20221110
+        # nn.init.xavier_normal_(self.weight.data)
+        nn.init.kaiming_uniform_(self.weight.data)
         if self.bias is not None:
             self.bias.data.fill_(0.0)
     
