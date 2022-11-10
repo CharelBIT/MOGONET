@@ -33,7 +33,20 @@ class GraphConvolution(nn.Module):
             return output + self.bias
         else:
             return output
-    
+
+#charelchen.cj 20221110
+class FullyConnectedModel(nn.Module):
+    def __init__(self, in_features, out_features):
+        super(FullConnectedModel, self).__init__()
+        self.model = nn.Sequential(
+                    OrderedDict([
+                        ("Linear", nn.Linear(in_features, out_features),
+                        ("Act", nn.ReLU()))
+                        ])
+                )
+    def forward(self, x):
+        return self.model(x)
+
 
 class GCN_E(nn.Module):
     def __init__(self, in_dim, hgcn_dim, dropout):
